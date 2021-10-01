@@ -10,7 +10,7 @@ From [Adaltas Course](https://github.com/adaltas/ece-devops-2021-fall/)
 
 
 ## Courses organisation :
-> [lab 1](/labs/lab-1)
+> [lab 1](/lab/lab1)
 
 
 ## Author
