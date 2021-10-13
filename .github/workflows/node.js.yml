@@ -33,7 +33,8 @@ jobs:
       - name: Connect to Redis
         # Runs a script that creates a Redis client, populates
         # the client with data, and retrieves data
-        run: node client.js
+        working-directory: ./lab/lab5/assets/userapi/src/
+        run: node dbClient.js
         # Environment variable used by the `client.js` script to create a new Redis client.
         env:
           # The hostname used to communicate with the Redis service container
