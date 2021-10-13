@@ -28,7 +28,7 @@ jobs:
       # For more information, see https://docs.npmjs.com/cli/ci.html
       - name: Install dependencies
         working-directory: ./lab/lab5/assets/userapi/
-        run: npm ci
+        run: npm ci | npm run
 
       - name: Connect to Redis
         # Runs a script that creates a Redis client, populates
