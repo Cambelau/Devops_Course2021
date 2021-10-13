@@ -40,7 +40,7 @@ jobs:
           # The hostname used to communicate with the Redis service container
           REDIS_HOST: redis
           # The default Redis port
-          REDIS_PORT: 6379    
+          REDIS_PORT: 3000    
         
   build:
 
