@@ -19,7 +19,7 @@ jobs:
       redis:
         image: redis
         ports:
-        - 3000:3000
+        - 6379:6379
         options: --entrypoint redis-server
 
     steps:
@@ -32,7 +32,7 @@ jobs:
       working-directory: ./lab/lab5/assets/userapi/src
       env:
         REDIS_HOST: redis
-        REDIS_PORT: ${{ job.services.redis.ports[3000] }}
+        REDIS_PORT: ${{ job.services.redis.ports[6379] }}
 
   vm-job:
     runs-on: ubuntu-latest
@@ -41,7 +41,7 @@ jobs:
       redis:
         image: redis
         ports:
-        - 3000/tcp
+        - 6379/tcp
         options: --entrypoint redis-server
 
     steps:
@@ -54,4 +54,4 @@ jobs:
       working-directory: ./lab/lab5/assets/userapi/src
       env:
         REDIS_HOST: localhost
-        REDIS_PORT: ${{ job.services.redis.ports[3000] }}
+        REDIS_PORT: ${{ job.services.redis.ports[6379] }}
