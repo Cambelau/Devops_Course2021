@@ -19,6 +19,9 @@ jobs:
       redis:
         # Docker Hub image
         image: redis
+        ports:
+          - 3000:3000
+        options: --entrypoint redis-server
     steps:
       # Downloads a copy of the code in your repository before running CI tests
       - name: Check out repository code
