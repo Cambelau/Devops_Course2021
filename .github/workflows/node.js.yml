@@ -38,10 +38,10 @@ jobs:
         # Environment variable used by the `client.js` script to create a new Redis client.
         env:
           # The hostname used to communicate with the Redis service container
-          REDIS_HOST: redis
+          REDIS_HOST: localhost
           # The default Redis port
-          REDIS_PORT: 3000    
-        
+          REDIS_PORT: 3000
+
   build:
 
     runs-on: ubuntu-latest
@@ -62,5 +62,3 @@ jobs:
         run: npm run build --if-present
       - working-directory: ./lab/lab5/assets/userapi/
         run: npm test
-
-
