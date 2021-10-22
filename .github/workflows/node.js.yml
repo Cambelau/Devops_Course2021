@@ -1,67 +1,57 @@
-name: Node.js CI
+name: Redis Service Example
 
 on:
   push:
-    branches: [ main ]
+    branches:
+    - main
   pull_request:
-    branches: [ main ]
+    branches:
+    - main
 
 jobs:
   container-job:
-    # Containers must run in Linux based operating systems
     runs-on: ubuntu-latest
-    # Docker Hub image that `container-job` executes in
-    container: node:10.18-jessie
 
-    # Service containers to run with `container-job`
+    container:
+      image:  node:10.16-jessie
+
     services:
-      # Label used to access the service container
       redis:
-        # Docker Hub image
         image: redis
         ports:
-          - 3000:3000
+        - 3000:3000
         options: --entrypoint redis-server
+
     steps:
-      # Downloads a copy of the code in your repository before running CI tests
-      - name: Check out repository code
-        uses: actions/checkout@v2
+    - uses: actions/checkout@v1
 
-      # Performs a clean installation of all dependencies in the `package.json` file
-      # For more information, see https://docs.npmjs.com/cli/ci.html
-      - name: Install dependencies
-        working-directory: ./lab/lab5/assets/userapi/
-        run: npm ci | npm run
+    - run: npm ci
+      working-directory: ./redis
 
-      - name: Connect to Redis
-        # Runs a script that creates a Redis client, populates
-        # the client with data, and retrieves data
-        working-directory: ./lab/lab5/assets/userapi/src/
-        run: node dbClient.js
-        # Environment variable used by the `client.js` script to create a new Redis client.
-        env:
-          # The hostname used to communicate with the Redis service container
-          REDIS_HOST: localhost
-          # The default Redis port
-          REDIS_PORT: 3000
+    - run: node client.js
+      working-directory: ./redis
+      env:
+        REDIS_HOST: redis
+        REDIS_PORT: ${{ job.services.redis.ports[3000] }}
 
-  build:
-
+  vm-job:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
+    services:
+      redis:
+        image: redis
+        ports:
+        - 3000/tcp
+        options: --entrypoint redis-server
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-      - working-directory: ./lab/lab5/assets/userapi/
-        run: npm ci
-      - working-directory: ./lab/lab5/assets/userapi/
-        run: npm run build --if-present
-      - working-directory: ./lab/lab5/assets/userapi/
-        run: npm test
+    - uses: actions/checkout@v1
+
+    - run: npm ci
+      working-directory: ./redis
+
+    - run: node client.js
+      working-directory: ./redis
+      env:
+        REDIS_HOST: localhost
+        REDIS_PORT: ${{ job.services.redis.ports[3000] }}
