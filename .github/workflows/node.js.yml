@@ -20,7 +20,7 @@ jobs:
         # Docker Hub image
         image: redis
         ports:
-          - 3000:3000
+          - 6379:6379
         options: --entrypoint redis-server
     steps:
       # Downloads a copy of the code in your repository before running CI tests
@@ -43,7 +43,7 @@ jobs:
           # The hostname used to communicate with the Redis service container
           REDIS_HOST: localhost
           # The default Redis port
-          REDIS_PORT: 3000
+          REDIS_PORT: 6379
 
   build:
 
