@@ -28,7 +28,7 @@ jobs:
     - run: npm ci
       working-directory: ./lab/lab5/assets/userapi/redis-stable
 
-    - run: node client.js
+    - run: node dbClient.js
       working-directory: ./lab/lab5/assets/userapi/redis-stable
       env:
         REDIS_HOST: redis
