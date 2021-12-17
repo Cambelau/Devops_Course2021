@@ -1,4 +1,5 @@
 node_modules
+redis-6.2.6
 .*
 !.github
 !.gitignore
