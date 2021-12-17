@@ -1,69 +1,47 @@
-# User API web application
 
-It is a basic NodeJS web application exposing REST API that creates and stores user parameters in [Redis database](https://redis.io/).
+# DevOps - final project
 
-## Functionality
-
-1. Start a web server
-2. Create a user
-2. Get a user
-
-## Installation
-
-This application is written on NodeJS and it uses Redis database.
-
-1. [Install NodeJS](https://nodejs.org/en/download/)
-
-2. [Install Redis](https://redis.io/download)
-
-3. Install application
-
-Go to the root directory of the application (where `package.json` file located) and run:
-
-```
-npm install 
-```
+Projet final de DevOps qui regroupe l'ensemble dud travail efféctué ce semestre
 
 ## Usage
 
-1. Start a web server
+*how to start and use the application, run the tests, ...*
 
-From the root directory of the project run:
-
-```
-npm start
-```
-
-It will start a web server available in your browser at http://localhost:3000.
-
-2. Create a user
-
-Send a POST (REST protocol) request using terminal:
-
-```bash
-curl --header "Content-Type: application/json" \
-  --request POST \
-  --data '{"username":"sergkudinov","firstname":"sergei","lastname":"kudinov"}' \
-  http://localhost:3000/user
-```
-
-It will output:
-
-```
-{"status":"success","msg":"OK"}
-```
-
-Another way to test your REST API is to use [Postman](https://www.postman.com/).
-
-## Testing
-
-From the root directory of the project, run:
-
-```
-npm test
-```
+* Clone this repository, from your local machine:
+  ```
+  git clone https://github.com/Cambelau/DevopsRepo/project.git devopsRepo
+  cd DevopsRepo/project
+  ```
 
 ## Author
 
-Sergei Kudinov   
-sergei@adaltas.com
+👤 **Matthieu Sajot**
+
+* Github: [@Cambelau](https://github.com/Cambelau)
+* Email: matthieu.sajot@edu.ece.fr
+
+👤 **Louis Artaud**
+
+* Github: [@Arlouys](https://github.com/Arlouys)
+* Email: louis.artaud@edu.ece.fr
+
+👤 **Théo**
+//a remplir
+* Github: [@](https://github.com/)
+* Email: @edu.ece.fr
+
+## Tasks
+
+1. Create a web application
+2. Apply CI/CD pipeline
+3. Configure and provision a virtual environment and run your application using the IaC approach
+4. Build Docker image of your application
+5. Make container orchestration using Docker Compose
+6. Make docker orchestration using Kubernetes
+7. Make a service mesh using Istio
+8. Implement Monitoring to your containerized application
+9. Document your project
+
+## Bonus
+
+*place your graduation and comments*
