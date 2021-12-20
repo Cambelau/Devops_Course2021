@@ -56,7 +56,7 @@ Check the github actions
 Nous avons rencontré des problèmes de compatibilité entre WSL et Windows. Nous avons essayé avec 2 vagrantfile différents.
 <br/>Le second est dans le dossier   `iac/other `
 <br/>Voila la documentation qui montre que vagrant ne fonctionne pas avec WSL : https://www.vagrantup.com/docs/other/wsl
-
+<br/>
 <img src="image/vagrant1.png" alt="drawing" width="500"/>
 <img src="image/vagrant2.png" alt="drawing" width="500"/>
 <img src="image/vagrant3.png" alt="drawing" width="500"/>
@@ -67,7 +67,7 @@ Nous avons rencontré des problèmes de compatibilité entre WSL et Windows. Nou
   ``  docker build -t app .  ``  
   ``   docker run -dp 3000:3000 app  ``  
   <br/>
-<br/> The image is push on docker up named "1598415/devopsrepo2021"
+<br/> The image is push on docker up named "1598415/devopsrepo2021"<br/>
 <img src="image/docker.png" alt="drawing" width="500"/>
 <img src="image/dockerhub.png" alt="drawing" width="500"/>
 
@@ -79,7 +79,8 @@ To run dockercompose :   ``  docker-compose up -d ``
 
 ### 6. Make docker orchestration using Kubernetes
 
-
+ ``  kubectl apply -f deployment.yaml``  
+``   kubernetes-bootcamp``  
 ### 7. Make a service mesh using Istio
 ### 8. Implement Monitoring to your containerized application
 
