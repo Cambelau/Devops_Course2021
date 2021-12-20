@@ -1,0 +1,8 @@
+node_modules
+redis-6.2.6
+.vagrant/
+.*
+!.github
+!.gitignore
+!.eslintignore
+!.eslintrc.json
