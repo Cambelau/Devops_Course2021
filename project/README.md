@@ -64,6 +64,7 @@ Ansible est présent dans le Vagrantfile mais nous n'avons pu vérifier son fonc
   ``   docker run -dp 3000:3000 app  ``  
   <br/>
 <br/> The image is push on docker up named "1598415/devopsrepo2021"<br/>
+<br/> Dockerignore is not neccesary because it only copy the userapi folder<br/>
 <img src="image/docker.png" alt="drawing" width="500"/>
 <img src="image/dockerhub.png" alt="drawing" width="500"/>
 
@@ -87,6 +88,7 @@ To run dockercompose :   ``  docker-compose up -d ``
    <br/>
   <img src="image/kiali.png" alt="drawing" width="500"/>  
   <br/>
+
 ### 8. Implement Monitoring to your containerized application
   <br/>
 Prometeus and grafana are installed for this project
