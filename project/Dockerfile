@@ -7,8 +7,8 @@ COPY userapi/package*.json ./
 
 RUN npm install
 
-COPY . .
+COPY ./userapi/ /userapi/
 
 EXPOSE 3000
 
-CMD [ "npm", "start" ]
+CMD ["npm", "start" ]
