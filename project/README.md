@@ -32,7 +32,7 @@ Projet final de DevOps qui regroupe l'ensemble dud travail efféctué ce semestr
 
 ## Tasks
 
-# 1. Create a web application
+### 1. Create a web application
 ***
 To run the app :
   ``    npm run start ``
