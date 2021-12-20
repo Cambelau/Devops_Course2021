@@ -36,9 +36,9 @@ Projet final de DevOps qui regroupe l'ensemble dud travail efféctué ce semestr
 
 To run the app :
   ``    npm run start ``
-  ``    cd userapi/redis-6.2.6
+  ```    cd userapi/redis-6.2.6
         src/redis-server
-  ``
+  ```
 
 2. Apply CI/CD pipeline
 3. Configure and provision a virtual environment and run your application using the IaC approach
