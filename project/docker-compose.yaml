@@ -1,0 +1,16 @@
+version: "3"
+services:
+    redis:
+        image: redis
+        container_name: cache
+        expose:
+          - 6379
+    userapi:
+        image: node:16
+        restart: always
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./userapi:/userapi
+        working_dir: /userapi
+        command: npm run start
