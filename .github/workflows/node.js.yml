@@ -1,4 +1,7 @@
-name: Node.js CI
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Main CI/CD
 
 on:
   push:
@@ -7,61 +10,46 @@ on:
     branches: [ main ]
 
 jobs:
-  container-job:
-    # Containers must run in Linux based operating systems
+  # CI part
+  test:
     runs-on: ubuntu-latest
-    # Docker Hub image that `container-job` executes in
-    container: node:10.18-jessie
-
-    # Service containers to run with `container-job`
+    # Define `working-directory` if you application is in a subfolder
+    defaults:
+      run:
+        working-directory: userapi
+     # Service containers to run with `runner-job`
     services:
       # Label used to access the service container
       redis:
         # Docker Hub image
         image: redis
         ports:
+          # Opens tcp port 6379 on the host and service container
           - 6379:6379
-        options: --entrypoint redis-server
-    steps:
-      # Downloads a copy of the code in your repository before running CI tests
-      - name: Check out repository code
-        uses: actions/checkout@v2
-
-      # Performs a clean installation of all dependencies in the `package.json` file
-      # For more information, see https://docs.npmjs.com/cli/ci.html
-      - name: Install dependencies
-        working-directory: ./lab/lab5/assets/userapi/
-        run: npm ci | npm run
-
-      - name: Connect to Redis
-        # Runs a script that creates a Redis client, populates
-        # the client with data, and retrieves data
-        working-directory: ./lab/lab5/assets/userapi/src/
-        run: node dbClient.js
-        # Environment variable used by the `client.js` script to create a new Redis client.
-        env:
-          # The hostname used to communicate with the Redis service container
-          REDIS_HOST: localhost
-          # The default Redis port
-          REDIS_PORT: 6379
-
-  build:
-
-    runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
-
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: '**/package-lock.json'
+    - run: npm ci
+    - run: npm test
+  # CD part
+  deploy:
+    needs: test # Requires CI part to be succesfully completed
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+      # Read instructions how to configure this action: https://github.com/marketplace/actions/deploy-to-heroku#getting-started
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
-          node-version: ${{ matrix.node-version }}
-      - working-directory: ./lab/lab5/assets/userapi/
-        run: npm ci
-      - working-directory: ./lab/lab5/assets/userapi/
-        run: npm run build --if-present
-      - working-directory: ./lab/lab5/assets/userapi/
-        run: npm test
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "devopsmatt" # Must be unique in Heroku
+          heroku_email: "sajotmatthieu@gmail.com" # Heroku account email
+          appdir: userapi # Define appdir if you application is in a subfolder
