@@ -43,7 +43,7 @@ To run the app :
   <img src="image/node.png" alt="drawing" width="500"/>
   <img src="image/redis.png" alt="drawing" width="500"/>
 
-###2. Apply CI/CD pipeline
+### 2. Apply CI/CD pipeline
 
 Check the github actions
 <br/>
@@ -51,7 +51,8 @@ Check the github actions
 <img src="image/cicd.png" alt="drawing" width="500"/>
 <img src="image/heroku.png" alt="drawing" width="500"/>
 
-###3. Configure and provision a virtual environment and run your application using the IaC approach
+### 3. Configure and provision a virtual environment and run your application using the IaC approach
+<br/>
 Nous avons rencontré des problèmes de compatibilité entre WSL et Windows. Nous avons essayé avec 2 vagrantfile différents.
 <br/>Le second est dans le dossier   `iac/other `
 <br/>Voila la documentation qui montre que vagrant ne fonctionne pas avec WSL : https://www.vagrantup.com/docs/other/wsl
@@ -60,7 +61,7 @@ Nous avons rencontré des problèmes de compatibilité entre WSL et Windows. Nou
 <img src="image/vagrant2.png" alt="drawing" width="500"/>
 <img src="image/vagrant3.png" alt="drawing" width="500"/>
 
-###4. Build Docker image of your application
+### 4. Build Docker image of your application
 <br/>
 
   ``  docker build -t app .  ``  
@@ -70,15 +71,17 @@ Nous avons rencontré des problèmes de compatibilité entre WSL et Windows. Nou
 <img src="image/docker.png" alt="drawing" width="500"/>
 <img src="image/dockerhub.png" alt="drawing" width="500"/>
 
-###5. Make container orchestration using Docker Compose
+### 5. Make container orchestration using Docker Compose
 
 To run dockercompose :   ``  docker-compose up -d ``  
 
 <img src="image/dockercompose.png" alt="drawing" width="500"/>
 
-###6. Make docker orchestration using Kubernetes
-###7. Make a service mesh using Istio
-###8. Implement Monitoring to your containerized application
+### 6. Make docker orchestration using Kubernetes
+
+
+### 7. Make a service mesh using Istio
+### 8. Implement Monitoring to your containerized application
 
 ## Bonus
 
