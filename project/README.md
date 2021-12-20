@@ -35,7 +35,10 @@ Projet final de DevOps qui regroupe l'ensemble dud travail efféctué ce semestr
 1. Create a web application
 2. Apply CI/CD pipeline
 3. Configure and provision a virtual environment and run your application using the IaC approach
+https://www.vagrantup.com/docs/other/wsl
 4. Build Docker image of your application
+ docker build -t app .
+ docker run -dp 3000:3000 app
 5. Make container orchestration using Docker Compose
 6. Make docker orchestration using Kubernetes
 7. Make a service mesh using Istio
