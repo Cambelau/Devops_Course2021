@@ -44,7 +44,8 @@ To run the app :
 
 Check the github actions
 <br/>
-![](image/heroku.png)
+
+<img src="image/heroku.png" alt="drawing" width="200"/>
 
 3. Configure and provision a virtual environment and run your application using the IaC approach
 https://www.vagrantup.com/docs/other/wsl
