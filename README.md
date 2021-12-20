@@ -27,6 +27,9 @@ From [Adaltas Course](https://github.com/adaltas/ece-devops-2021-fall/)
 > [lab 7](/lab/lab7)
 > 
 > [lab 8](/lab/lab8)
+> 
+> [lab 9](/lab/lab8)
+
 
 ## Author
 
