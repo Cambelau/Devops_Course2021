@@ -38,8 +38,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: '**/package-lock.json'
-    - run: npm ci
-    - run: npm test
+    - working-directory: ./project/userapi/
+      run: npm ci
+    - working-directory: ./project/userapi/
+      run: npm test
   # CD part
   deploy:
     needs: test # Requires CI part to be succesfully completed
