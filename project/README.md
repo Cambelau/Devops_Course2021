@@ -65,7 +65,17 @@ Nous avons rencontré des problèmes de compatibilité entre WSL et Windows. Nou
 
   ``  docker build -t app .  ``  
   ``   docker run -dp 3000:3000 app  ``  
+  <br/>
+<br/> The image is push on docker up named "1598415/devopsrepo2021"
+<img src="image/docker.png" alt="drawing" width="500"/>
+<img src="image/dockerhub.png" alt="drawing" width="500"/>
+
 ###5. Make container orchestration using Docker Compose
+
+To run dockercompose :   ``  docker-compose up -d ``  
+
+<img src="image/dockercompose.png" alt="drawing" width="500"/>
+
 ###6. Make docker orchestration using Kubernetes
 ###7. Make a service mesh using Istio
 ###8. Implement Monitoring to your containerized application
