@@ -20,11 +20,6 @@ Projet final de DevOps qui regroupe l'ensemble du travail effectué ce semestre
 * Github: [@Cambelau](https://github.com/Cambelau)
 * Email: matthieu.sajot@edu.ece.fr
 
-👤 **Louis Artaud**
-
-* Github: [@Arlouys](https://github.com/Arlouys)
-* Email: louis.artaud@edu.ece.fr
-
 👤 **Théo**
 //a remplir
 * Github: [@](https://github.com/)
@@ -81,6 +76,10 @@ To run dockercompose :   ``  docker-compose up -d ``
 
  ``  kubectl apply -f deployment.yaml``  
 ``   kubernetes-bootcamp``  
+<img src="image/k8s1.png" alt="drawing" width="500"/>
+<img src="image/k8s2.png" alt="drawing" width="500"/>
+<img src="image/k8s3.png" alt="drawing" width="500"/>
+
 ### 7. Make a service mesh using Istio
 ### 8. Implement Monitoring to your containerized application
 
