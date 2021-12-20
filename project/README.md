@@ -1,7 +1,7 @@
 
 # DevOps - final project
 
-Projet final de DevOps qui regroupe l'ensemble dud travail efféctué ce semestre
+Projet final de DevOps qui regroupe l'ensemble du travail effectué ce semestre
 
 ## Usage
 
@@ -52,8 +52,16 @@ Check the github actions
 <img src="image/heroku.png" alt="drawing" width="500"/>
 
 3. Configure and provision a virtual environment and run your application using the IaC approach
-https://www.vagrantup.com/docs/other/wsl
+Nous avons rencontré des problèmes de compatibilité entre WSL et Windows. Nous avons essayé avec 2 vagrantfile différents.
+<br/>Le second est dans le dossier   `iac/other `
+<br/>Voila la documentation qui montre que vagrant ne fonctionne pas avec WSL : https://www.vagrantup.com/docs/other/wsl
+
+<img src="image/vagrant1.png" alt="drawing" width="500"/>
+<img src="image/vagrant2.png" alt="drawing" width="500"/>
+<img src="image/vagrant3.png" alt="drawing" width="500"/>
+
 4. Build Docker image of your application
+<br/>
    ``  docker build -t app .  ``  
   ``   docker run -dp 3000:3000 app  ``  
 5. Make container orchestration using Docker Compose
