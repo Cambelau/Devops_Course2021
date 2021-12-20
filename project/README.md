@@ -49,6 +49,7 @@ Check the github actions
 ### 3. Configure and provision a virtual environment and run your application using the IaC approach
 <br/>
 Nous avons rencontré des problèmes de compatibilité entre WSL et Windows. Nous avons essayé avec 2 vagrantfile différents.
+Ansible est présent dans le Vagrantfile mais nous n'avons pu vérifier son fonctionnement
 <br/>Le second est dans le dossier   `iac/other `
 <br/>Voila la documentation qui montre que vagrant ne fonctionne pas avec WSL : https://www.vagrantup.com/docs/other/wsl
 <br/>
@@ -81,8 +82,14 @@ To run dockercompose :   ``  docker-compose up -d ``
 <img src="image/k8s3.png" alt="drawing" width="500"/>
 
 ### 7. Make a service mesh using Istio
+  <br/>
+  Istio is installed for this project with kiali
+   <br/>
+  <img src="image/kiali.png" alt="drawing" width="500"/>  
+  <br/>
 ### 8. Implement Monitoring to your containerized application
-
-## Bonus
-
-*place your graduation and comments*
+  <br/>
+Prometeus and grafana are installed for this project
+  <br/>
+  <img src="image/prom.png" alt="drawing" width="500"/>  
+  <br/>
