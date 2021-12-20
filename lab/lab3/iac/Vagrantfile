@@ -1,0 +1,29 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "generic/ubuntu1804"
+
+  config.vm.network "private_network", ip: "192.168.33.100"
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "nodejs-box"
+    vb.memory = "512"
+  end
+
+  config.vm.synced_folder "../userapi", "/home/vagrant/userapi"
+
+  config.vm.provision "install-node", type: "shell", privileged: false do |s|
+    s.path = "./install-node.sh"
+  end
+
+  # Use Vagrant Ansible provisioner
+  config.vm.provision "ansible_local" do |ansible|
+    # The path to the playbooks entry point
+    ansible.playbook = "playbooks/run.yml"
+    # Only run the roles with these tags
+    ansible.tags = "install"
+  end
+
+end
