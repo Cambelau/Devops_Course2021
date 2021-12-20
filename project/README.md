@@ -40,18 +40,22 @@ To run the app :
         src/redis-server
   ``
 
+  <img src="image/node.png" alt="drawing" width="500"/>
+  <img src="image/redis.png" alt="drawing" width="500"/>
+
 ###2. Apply CI/CD pipeline
 
 Check the github actions
 <br/>
 
-<img src="image/heroku.png" alt="drawing" width="400"/>
+<img src="image/cicd.png" alt="drawing" width="500"/>
+<img src="image/heroku.png" alt="drawing" width="500"/>
 
 3. Configure and provision a virtual environment and run your application using the IaC approach
 https://www.vagrantup.com/docs/other/wsl
 4. Build Docker image of your application
- docker build -t app .
- docker run -dp 3000:3000 app
+   ``  docker build -t app .  ``  
+  ``   docker run -dp 3000:3000 app  ``  
 5. Make container orchestration using Docker Compose
 6. Make docker orchestration using Kubernetes
 7. Make a service mesh using Istio
