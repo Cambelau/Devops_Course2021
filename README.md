@@ -37,6 +37,7 @@ From [Adaltas Course](https://github.com/adaltas/ece-devops-2021-fall/)
 
 * Github: [@Cambelau](https://github.com/Cambelau)
 
-👤 **Théo ** // a remplir
+👤 **Théo**
 
 * Github: [@TheoDorsay](https://github.com/TheoDorsay)
+* Email: theophile.poirierdangedorsay@edu.ece.fr
