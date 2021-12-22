@@ -22,8 +22,8 @@ Projet final de DevOps qui regroupe l'ensemble du travail effectué ce semestre
 
 👤 **Théo**
 //a remplir
-* Github: [@](https://github.com/)
-* Email: @edu.ece.fr
+* Github: [@TheoDorsay](https://github.com/TheoDorsay)
+* Email: theophile.poirierdangedorsay@edu.ece.fr
 
 ## Tasks
 
