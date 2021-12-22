@@ -21,7 +21,7 @@ Projet final de DevOps qui regroupe l'ensemble du travail effectué ce semestre
 * Email: matthieu.sajot@edu.ece.fr
 
 👤 **Théo**
-//a remplir
+
 * Github: [@TheoDorsay](https://github.com/TheoDorsay)
 * Email: theophile.poirierdangedorsay@edu.ece.fr
 
