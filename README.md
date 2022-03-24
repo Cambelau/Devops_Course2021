@@ -4,7 +4,9 @@
 
 # DevTech lab
 
-Courses lab of devops at ECE 2021-2022
+Courses lab of devops at ECE 2021-2022.
+  
+Utilisation of many devops technologies.
 
 From [Adaltas Course](https://github.com/adaltas/ece-devops-2021-fall/)
 
@@ -12,11 +14,11 @@ From [Adaltas Course](https://github.com/adaltas/ece-devops-2021-fall/)
 > [Project Devops link](/project)
 > 
 ## Courses organisation :
-> [lab 1](/lab/lab1)
+> [lab 1 / Git](/lab/lab1)
 > 
-> [lab 2](/lab/lab2)
+> [lab 2 /Git](/lab/lab2)
 > 
-> [lab 3](/lab/lab3) 
+> [lab 3 /Vagrant](/lab/lab3) 
 > 
 > [lab 4](/lab/lab4)
 > 
@@ -40,4 +42,3 @@ From [Adaltas Course](https://github.com/adaltas/ece-devops-2021-fall/)
 👤 **Théo**
 
 * Github: [@TheoDorsay](https://github.com/TheoDorsay)
-* Email: theophile.poirierdangedorsay@edu.ece.fr
